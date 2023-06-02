@@ -11,6 +11,7 @@ jobs:
         python-version: '3.7'
     - name: install dependencies
       run: |
+        pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Streamlit App
       run: |
