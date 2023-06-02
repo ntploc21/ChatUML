@@ -1,0 +1,48 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.7'
+    - name: install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Run Streamlit App
+      run: |
+        streamlit run chat-uml/app.py
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.7'
+    - name: Install flake8
+      run: pip install flake8 flake8-import-order flake8-future-import flake8-commas flake8-logging-format flake8-quotes
+    - name: Lint with flake8
+      run: |
+        flake8 --version
+        flake8
+  # unit:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Set up Python 3.7
+  #     uses: actions/setup-python@v4
+  #     with:
+  #       python-version: '3.7'
+  #   - name: Cache pip
+  #     uses: actions/cache@v2
+  #     with:
+  #       path: ~/.cache/pip
+  #       key: pip-${{ runner.os }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('requirements.txt') }}
+  #   # - name: Run unit tests
+  #   #   run: coverage run
+  #   # - name: Generate coverage report
+  #   #   run: coverage xml
