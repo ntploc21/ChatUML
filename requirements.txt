@@ -1,4 +1,4 @@
-altair==5.0.1
+altair<5
 attrs==23.1.0
 blinker==1.6.2
 cachetools==5.3.1
@@ -46,7 +46,7 @@ tornado==6.2
 typing_extensions==4.6.3
 tzdata==2023.3
 tzlocal==5.0.1
-urllib3==2.0.2
+urllib3==1.26.6
 validators==0.20.0
 watchdog==3.0.0
 zipp==3.15.0
