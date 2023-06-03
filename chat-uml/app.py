@@ -20,15 +20,13 @@ if 'input' not in st.session_state:
 
 
 def get_text():
-    """
-    Get user input
-    """
+    """Get user input"""
 
     prevMessage = ""
     hasPrevMessage = False
-    if (st.session_state["input"] != ""):
+    if (st.session_state['input'] != ""):
         prevMessage = st.session_state["input"]
-        st.session_state["input"] = ""
+        st.session_state['input'] = ""
         hasPrevMessage = True
 
     input_text = st.sidebar.text_input("You: ", key="input")
