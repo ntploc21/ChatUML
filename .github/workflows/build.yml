@@ -17,18 +17,18 @@ jobs:
       run: |
         flake8 --version
         flake8
-  unittest:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.7'
-    - name: install dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
+  # unittest:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Set up Python 3.7
+  #     uses: actions/setup-python@v4
+  #     with:
+  #       python-version: '3.7'
+  #   - name: install dependencies
+  #     run: |
+  #       pip install --upgrade pip
+  #       pip install -r requirements.txt
     # - name: Run unit tests
     #   run: coverage run
     # - name: Generate coverage report
