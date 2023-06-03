@@ -5,7 +5,8 @@ filename = *.py
 
 ignore =
     E701,
-    W293
+    W293,
+    E722
 
 per-file-ignores =
     # F401: unused imports, ignore in all __init__.py

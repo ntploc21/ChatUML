@@ -19,6 +19,9 @@ if 'past' not in st.session_state:
 if 'input' not in st.session_state:
     st.session_state['input'] = ""
 
+if 'diagram' not in st.session_state:
+    st.session_state['diagram'] = ""
+
 
 def get_text():
     """Get user input"""
@@ -46,11 +49,16 @@ if user_input:
     #     },"parameters": {"repetition_penalty": 1.33},
     # })
 
-    response, success = complete_prompt.ask(user_input)
+    response, diagram = complete_prompt.ask(user_input)
+
+    if diagram:
+        st.session_state['diagram'] = diagram
 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(response)
 
+if st.session_state['diagram']:
+    st.image(st.session_state['diagram'], output_format="PNG", use_column_width=True)
 
 if st.session_state['generated']:
 
