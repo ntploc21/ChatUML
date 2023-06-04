@@ -26,29 +26,21 @@ if 'diagram' not in st.session_state:
 def get_text():
     """Get user input"""
 
-    prevMessage = ""
-    hasPrevMessage = False
+    prev_message = ""
+    has_prev_message = False
     if (st.session_state['input'] != ""):
-        prevMessage = st.session_state["input"]
+        prev_message = st.session_state["input"]
         st.session_state['input'] = ""
-        hasPrevMessage = True
+        has_prev_message = True
 
     input_text = st.sidebar.text_input("You: ", key="input")
-    if (hasPrevMessage): input_text = prevMessage
+    if (has_prev_message): input_text = prev_message
     return input_text
 
 
 user_input = get_text()
 
 if user_input:
-    # output = query({
-    #     "inputs": {
-    #         "past_user_inputs": st.session_state.past,
-    #         "generated_responses": st.session_state.generated,
-    #         "text": user_input,
-    #     },"parameters": {"repetition_penalty": 1.33},
-    # })
-
     response, diagram = complete_prompt.ask(user_input)
 
     if diagram:
