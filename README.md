@@ -20,7 +20,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Documentation
 ### User Manual
-(Will be updated soon)
+Please refer to the [User Manual](USER_MANUAL.md) for more information about the usage of the application.
 
 ## Technical Overview
 This project is built with the following technologies:

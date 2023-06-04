@@ -34,6 +34,7 @@ def ask(user_message):
     
     Returns:
         description_response (str): The description of the diagram
+        
         uml_diagram (str): The code of the diagram
     
     '''

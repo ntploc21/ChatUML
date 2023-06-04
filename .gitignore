@@ -2,3 +2,9 @@ venv/
 .vscode/
 __pycache__/
 .streamlit/secrets.toml
+docs/_build
+docs/_static
+docs/_templates
+docs/*.*
+docs/Makefile
+!docs/images/
