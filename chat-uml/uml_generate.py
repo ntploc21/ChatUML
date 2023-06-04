@@ -2,6 +2,7 @@ from plantweb.render import render
 
 
 def get_uml_diagram(content):
+    '''Generate UML diagram from PlantUML code'''
     try:
         output = render(
             content,

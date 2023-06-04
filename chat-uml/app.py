@@ -10,6 +10,7 @@ st.set_page_config(
 st.header("ChatUML")
 st.markdown("[Github](https://github.com/ntploc21/ChatUML/)")
 
+# Initialize session state
 if 'generated' not in st.session_state:
     st.session_state['generated'] = ["Hello! How can I help you today?"]
 
@@ -24,7 +25,7 @@ if 'diagram' not in st.session_state:
 
 
 def get_text():
-    """Get user input"""
+    '''Get user prompt input'''
 
     prev_message = ""
     has_prev_message = False
@@ -39,7 +40,6 @@ def get_text():
 
 
 user_input = get_text()
-
 if user_input:
     response, diagram = complete_prompt.ask(user_input)
 
@@ -48,6 +48,7 @@ if user_input:
 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(response)
+
 
 if st.session_state['diagram']:
     st.image(st.session_state['diagram'], output_format="PNG", use_column_width=True)
