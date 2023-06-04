@@ -1,0 +1,7 @@
+complete\_prompt module
+=======================
+
+.. automodule:: complete_prompt
+   :members:
+   :undoc-members:
+   :show-inheritance:

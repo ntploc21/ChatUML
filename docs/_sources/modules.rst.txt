@@ -1,0 +1,9 @@
+chat-uml
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   app
+   complete_prompt
+   uml_generate

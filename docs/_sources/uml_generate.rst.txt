@@ -1,0 +1,7 @@
+uml\_generate module
+====================
+
+.. automodule:: uml_generate
+   :members:
+   :undoc-members:
+   :show-inheritance:
