@@ -24,6 +24,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Technical Overview
 This project is built with the following technologies:
+### Technologies
 - [Python 3.8](https://www.python.org/downloads/release/python-380/) as the main programming language.
 - [Streamlit](https://streamlit.io/) for the web application.
 - [OpenAI GPT-3](https://openai.com/blog/openai-api/) for the generating the PlantUML code.
@@ -31,6 +32,13 @@ This project is built with the following technologies:
 - [Docker](https://www.docker.com/) for the containerization.
 - [Sphinx](https://www.sphinx-doc.org/) for the documentation.
 
+### Code Style
+This project follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) code style. The code is also linted with [Flake8](https://flake8.pycqa.org/en/latest/).
+
+### Development
+This project used pre-commit hooks to lint the code before committing. The pre-commit hooks are configured in the `.pre-commit-config.yaml` file. The pre-commit hooks are managed by [pre-commit](https://pre-commit.com/).
+
+And I also implemented a CI/CD pipeline for this project. The CI/CD pipeline is managed by [GitHub Actions](https://github.com/ntploc21/ChatUML/blob/main/.github/workflows/build.yml).
 
 ## Building
 ### Manual
