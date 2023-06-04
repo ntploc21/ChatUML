@@ -1,3 +1,6 @@
+'''The file that help with generating the complete prompt for the GPT-3 API.'''
+
+
 import openai
 import streamlit as st
 import json
@@ -8,6 +11,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # @st.experimental_memo
 def load_initial_prompt():
+    '''Load initial prompt from json file'''
     prompt_list = json.load(open('prompts/initial_prompt.json', 'r'))
     return prompt_list
 
@@ -16,12 +20,23 @@ raw_chat_message = load_initial_prompt()
 
 
 def error():
+    '''Return default error message'''
     return '''Sorry, I don't know which diagram to generate with that information you gave me.
                     You can try to customize your prompt to be like this example:
                     \"Can you generate for me a simple compiler diagram?\"''', False
 
 
 def ask(user_message):
+    '''Ask OpenAI for response and return description and diagram
+    
+    Args:
+        user_message (str): The message that user input
+    
+    Returns:
+        description_response (str): The description of the diagram
+        uml_diagram (str): The code of the diagram
+    
+    '''
     raw_chat_message.append({"role": "user", "content": user_message})
     
     response = openai.ChatCompletion.create(
